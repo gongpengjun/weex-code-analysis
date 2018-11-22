@@ -1,0 +1,141 @@
+2018-10-21 09:40:59.386737+0800 WeexDemo[14552:2019013] <Weex>[debug]WXResourceLoader.m:140, request:<NSMutableURLRequest: 0x1c400b1b0> { URL: http://192.168.1.100/index.js?random=-1650157334 } didReceiveResponse:<NSHTTPURLResponse: 0x1c4235220> { URL: http://192.168.1.100/index.js?random=-1650157334 } { Status Code: 200, Headers {
+    Connection =     (
+        "keep-alive"
+    );
+    "Content-Encoding" =     (
+        gzip
+    );
+    "Content-Type" =     (
+        "application/javascript"
+    );
+    Date =     (
+        "Sun, 21 Oct 2018 01:40:59 GMT"
+    );
+    Etag =     (
+        "W/\"5bca05e7-570\""
+    );
+    "Last-Modified" =     (
+        "Fri, 19 Oct 2018 16:27:19 GMT"
+    );
+    Server =     (
+        "nginx/1.13.2"
+    );
+    "Transfer-Encoding" =     (
+        Identity
+    );
+} }
+2018-10-21 09:40:59.388888+0800 WeexDemo[14552:2019013] <Weex>[debug]WXResourceLoader.m:159, request:<NSMutableURLRequest: 0x1c400b1b0> { URL: http://192.168.1.100/index.js?random=-1650157334 } didReceiveDataLength:1392
+2018-10-21 09:40:59.390608+0800 WeexDemo[14552:2019013] <Weex>[debug]WXResourceLoader.m:198, request:<NSMutableURLRequest: 0x1c400b1b0> { URL: http://192.168.1.100/index.js?random=-1650157334 } didFinishCollectingMetrics
+2018-10-21 09:40:59.391583+0800 WeexDemo[14552:2019013] <Weex>[debug]WXResourceLoader.m:173, request:<NSMutableURLRequest: 0x1c400b1b0> { URL: http://192.168.1.100/index.js?random=-1650157334 } requestDidFinishLoading
+2018-10-21 09:40:59.392249+0800 WeexDemo[14552:2019013] <Weex>[log]WXSDKInstance.m:182, Start rendering page:http://192.168.1.100/index.js?random=-1650157334
+2018-10-21 09:40:59.397409+0800 WeexDemo[14552:2019161] <Weex>[debug]WXJSCoreBridge.m:197, Calling JS... method:createInstance, args:(
+    2,
+    "// { \"framework\": \"Vanilla\" }\n\n/*\n * Licensed to the Apache Software Foundation (ASF) under one\n * or more contributor license agreements.  See the NOTICE file\n * distributed with this work for additional information\n * regarding copyright ownership.  The ASF licenses this file\n * to you under the Apache License, Version 2.0 (the\n * \"License\"); you may not use this file except in compliance\n * with the License.  You may obtain a copy of the License at\n *\n *   http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing,\n * software distributed under the License is distributed on an\n * \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY\n * KIND, either express or implied.  See the License for the\n * specific language governing permissions and limitations\n * under the License.\n */\n\nvar body = document.createElement('div', {\n  classStyle: { alignItems: 'center', marginTop: 120 }\n})\n\nvar image = document.createElement('image', {\n  attr: { src: 'https://alibaba.github.io/weex/img/weex_logo_blue@3x.png' },\n  classStyle: { width: 360, height: 82 }\n})\n\nvar text = document.createElement('text', {\n  attr: { value: 'Hello World' },\n  classStyle: { fontSize: 48 }\n})\n\nbody.appendChild(image)\nbody.appendChild(text)\ndocument.documentElement.appendChild(body)\n\nbody.addEvent('click', function () {\n  text.setAttr('value', 'Hello Weex')\n})\n",
+        {
+        bundleUrl = "http://192.168.1.100/index.js";
+        debug = 1;
+    }
+)
+2018-10-21 09:40:59.403605+0800 WeexDemo[14552:2019161] <Weex>[debug]WXJSCoreBridge.m:244, callCreateBody...2, {
+    children =     (
+                {
+            attr =             {
+                src = "https://alibaba.github.io/weex/img/weex_logo_blue@3x.png";
+            };
+            ref = 62;
+            style =             {
+                height = 82;
+                width = 360;
+            };
+            type = image;
+        },
+                {
+            attr =             {
+                value = "Hello World";
+            };
+            ref = 64;
+            style =             {
+                fontSize = 48;
+            };
+            type = text;
+        }
+    );
+    ref = "_root";
+    style =     {
+        alignItems = center;
+        marginTop = 120;
+    };
+    type = div;
+},
+2018-10-21 09:40:59.404746+0800 WeexDemo[14552:2019161] <Weex>[debug]WXJSCoreBridge.m:324, callAddEvent...2, _root, click
+2018-10-21 09:40:59.405291+0800 WeexDemo[14552:2019161] <Weex>[debug]WXJSCoreBridge.m:207, Calling native... instance:2, tasks:(
+        {
+        args =         (
+        );
+        method = createFinish;
+        module = dom;
+    }
+), callback:-1
+{layout: {width: 414, height: 672, top: 0, left: 0}, flexDirection: 'column', alignItems: 'stretch', flex: 0, width: 414, height: 672, left: 0, top: 0, children: [
+  {_root:div layout: {width: 414, height: 672, top: 66.24, left: 0}, flexDirection: 'column', alignItems: 'center', flex: 0, marginTop: 66.24, marginStart: nan, marginEnd: nan, width: 414, height: 672, children: [
+    {62:image layout: {width: 198.72, height: 45.264, top: 0, left: 107.64}, flexDirection: 'column', alignItems: 'stretch', flex: 0, width: 198.72, height: 45.264, },
+    {64:text layout: {width: 128, height: 31.6667, top: 45.264, left: 143}, flexDirection: 'column', alignItems: 'stretch', flex: 0, },
+  ]},
+]},
+2018-10-21 09:40:59.421328+0800 WeexDemo[14552:2019292] <Weex>[debug]WXImageComponent.m:427, Updating image:https://alibaba.github.io/weex/img/weex_logo_blue@3x.png, component:62
+2018-10-21 09:40:59.421622+0800 WeexDemo[14552:2019013] <Weex>[debug]WXDemoViewController.m:169, Render Finish...
+2018-10-21 09:40:59.421982+0800 WeexDemo[14552:2019013] <Weex>[debug]WXComponent+Display.m:65, No need to draw border for _root
+2018-10-21 09:40:59.423515+0800 WeexDemo[14552:2019161] <Weex>[debug]WXJSCoreBridge.m:197, Calling JS... method:callJS, args:(
+    2,
+        (
+                {
+            args =             (
+                "_root",
+                viewappear,
+                                {
+                },
+                                {
+                }
+            );
+            method = fireEvent;
+            module = "";
+        }
+    )
+)
+2018-10-21 09:41:00.003735+0800 WeexDemo[14552:2019013] Status bar could not find cached time string image. Rendering in-process.
+2018-10-21 09:41:00.231647+0800 WeexDemo[14552:2019134] [] nw_connection_get_connected_socket 11 Connection has no connected handler
+2018-10-21 09:41:00.231768+0800 WeexDemo[14552:2019134] TCP Conn 0x1c4177400 Failed : error 0:61 [61]
+2018-10-21 09:41:58.731572+0800 WeexDemo[14552:2019161] <Weex>[debug]WXJSCoreBridge.m:197, Calling JS... method:callJS, args:(
+    2,
+        (
+                {
+            args =             (
+                "_root",
+                click,
+                                {
+                    position =                     {
+                        height = "1217.391304347826";
+                        width = "749.9999999999999";
+                        x = 0;
+                        y = "236.1111111111111";
+                    };
+                    timestamp = "1540086118729.778";
+                },
+                                {
+                }
+            );
+            method = fireEvent;
+            module = "";
+        }
+    )
+)
+2018-10-21 09:41:58.734033+0800 WeexDemo[14552:2019161] <Weex>[debug]WXJSCoreBridge.m:292, callUpdateAttrs...2, 64, {
+    value = "Hello Weex";
+}
+{layout: {width: 414, height: 672, top: 0, left: 0}, flexDirection: 'column', alignItems: 'stretch', flex: 0, width: 414, height: 672, left: 0, top: 0, children: [
+  {_root:div layout: {width: 414, height: 672, top: 66.24, left: 0}, flexDirection: 'column', alignItems: 'center', flex: 0, marginTop: 66.24, marginStart: nan, marginEnd: nan, width: 414, height: 672, children: [
+    {62:image layout: {width: 198.72, height: 45.264, top: 0, left: 107.64}, flexDirection: 'column', alignItems: 'stretch', flex: 0, width: 198.72, height: 45.264, },
+    {64:text layout: {width: 125, height: 31.6667, top: 45.264, left: 144.5}, flexDirection: 'column', alignItems: 'stretch', flex: 0, },
+  ]},
+]},
+2018-10-21 09:42:00.003746+0800 WeexDemo[14552:2019013] Status bar could not find cached time string image. Rendering in-process.
