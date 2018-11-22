@@ -6,7 +6,7 @@
 - [weex-1b-Weex概念-SDK视角.md](docs/weex-1b-Weex概念-SDK视角.md)
 - [weex-2a-基础JavaScrip和NA.md](docs/weex-2a-基础JavaScrip和NA.md)
 - [weex-2b-基础JS-NA-Bridge.md](docs/weex-2b-基础JS-NA-Bridge.md)
-- [weex-2c-SDK-bridge-jsframework.md](docs/weex-2c-SDK-bridge-jsframework.md)
+- [weex-2c-SDK-bridge-JSFramework.md](docs/weex-2c-SDK-bridge-JSFramework.md)
 - [weex-2d-SDK-bridge-vDOM.md](docs/weex-2d-SDK-bridge-vDOM.md)
 - [weex-2e-SDK-overview.md](docs/weex-2e-SDK-overview.md)
 - [weex-3a-SDK初始化-NA端.md](docs/weex-3a-SDK初始化-NA端.md)
