@@ -42,6 +42,8 @@ nativeLog("Hello from JS")
 global.nativeLog("Hello from JS")
 ```
 
+![js_call_oc](bridge_1_js_call_oc.png)
+
 ***2. OC调用JS函数***
 
 2.1 JavaScript暴露函数给ObjectiveC
@@ -61,6 +63,8 @@ global['callJS'] = (...args) => {
 JSContext *jsContext = [[JSContext alloc] init];
 [[jsContext globalObject] invokeMethod:@"callJS" withArguments:@[execIns, tasks]];
 ```
+
+![oc_call_js](bridge_2_oc_call_js.png)
 
 ***OC和JS对象传递***
 
