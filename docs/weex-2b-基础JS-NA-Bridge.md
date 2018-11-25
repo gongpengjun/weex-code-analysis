@@ -2,71 +2,68 @@
 
 ## 二、知识准备 - Native <-> JavaScript Bridge
 
-***JS -> OC***
+***0. JSContext下标语法***
+
+JSContext[] Subscript语法 
+
+[JSContext.mm源码](https://github.com/WebKit/webkit/blob/master/Source/JavaScriptCore/API/JSContext.mm) : [JSContext Subscript Support](JSContext_globalObject.png)
 
 ```
-// JavaScript function: colorForWord
-
-var colorForWord = function(word) {
-    if (!colorMap[word])
-        return;
-    return makeNSColor(colorMap[word]);
-};
-```
-
-![](js_call_oc_block.png)
-
-```
-// ObjectiveC Inject OC Block as JS Function "makeNSColor"
-
-#import <JavaScriptCore/JavaScriptCore.h>
-
-JSContext[@"makeNSColor"] = ^(NSDictionary *color){
-    float r = [color[@"red"] floatValue];
-    float g = [color[@"green"] floatValue];
-    float b = [color[@"blue"] floatValue];
-    return [NSColor colorWithRed:(r / 255.0)
-                           green:(g / 255.0f)
-                            blue:(b / 255.0f)
-                           alpha:1.0];
-};
-```
-
-JSContext[@"makeNSColor"]语法 [JSContext.mm](https://github.com/WebKit/webkit/blob/master/Source/JavaScriptCore/API/JSContext.mm):
-
-```
-JSContext[@"makeNSColor"] = ^(NSDictionary *color){};
+JSContext[@"nativeLog"] = ^(){};
 //等价于
-[JSContext globalObject][@"makeNSColor"] = ^(NSDictionary *color){};
+[JSContext globalObject][@"nativeLog"] = ^(){};
 ```
 
-![](JSContext_globalObject.png)
+***1. JS调用OC函数***
 
-OC和JS类型对照[Converting Between JavaScript and Native Types](https://developer.apple.com/documentation/javascriptcore/jsvalue):
-
-![](oc_js_types.png)
-
-详细执行过程:
-
-![](bridge_js_parameter.png)
-
-![](bridge_js_call_oc.png)
-
-***OC -> JS***
+1.1 ObjectiveC暴露函数给JavaScript
 
 ```
 #import <JavaScriptCore/JavaScriptCore.h>
 
-NSArray *args = @[@"red"];
-[[JSContext globalObject] invokeMethod:@"colorForWord" withArguments:args];
+JSContext *jsContext = [[JSContext alloc] init];
+// ObjectiveC Inject Block as JS Function
+jsContext[@"nativeLog"] = ^() {
+    NSMutableString *string = [NSMutableString string];
+    [string appendString:@"jsLog: "];
+    NSArray *args = [JSContext currentArguments];
+    [args enumerateObjectsUsingBlock:^(JSValue *jsVal, NSUInteger idx, BOOL *stop) {
+        [string appendFormat:@"%@ ", jsVal ];
+    }];
+    NSLog(@"%@", string);
+};
 ```
 
-详细执行过程:
+1.2 JavaScript调用ObjectiveC函数
 
-![](bridge_oc_call_js_call_oc.png)
+```
+nativeLog("Hello from JS")
+等价于
+global.nativeLog("Hello from JS")
+```
 
-***OC <-> JS 内存***
+***2. OC调用JS函数***
 
-![](oc_js_objects.png)
+2.1 JavaScript暴露函数给ObjectiveC
+
+```
+// JavaScript set global methods
+global['callJS'] = (...args) => {
+  receiveTasks(...args);
+};
+```
+
+2.1 ObjectiveC调用JavaScript函数
+
+```
+#import <JavaScriptCore/JavaScriptCore.h>
+
+JSContext *jsContext = [[JSContext alloc] init];
+[[jsContext globalObject] invokeMethod:@"callJS" withArguments:@[execIns, tasks]];
+```
+
+***OC和JS对象传递***
+
+[OC和JS对象关系](oc_js_objects.png)
 
 参考文档：[深入浅出 JavaScriptCore](http://www.cocoachina.com/ios/20170720/19958.html)
