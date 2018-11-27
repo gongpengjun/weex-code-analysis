@@ -21,5 +21,6 @@
 - [weex-4e-JSBundle界面布局.md](docs/weex-4e-JSBundle界面布局.md)
 - [weex-4f-JSBundle执行结果.md](docs/weex-4f-JSBundle执行结果.md)
 - [weex-4g-JSBundle用户交互.md](docs/weex-4g-JSBundle用户交互.md)
-- [weex-5-总结.md](docs/weex-5-总结.md)
+- [weex-5a-总结.md](docs/weex-5a-总结.md)
+- [weex-5b-原理.md](docs/weex-5b-原理.md)
 - [weex-6-课后练习.md](docs/weex-6-课后练习.md)
